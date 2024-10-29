@@ -1,0 +1,9 @@
+struct X{
+X (int i, int j) : base(i), rem(base% j) { }; // base is unindefied, so rem(base% j) will have unindefied behaviour
+int rem, base;
+}
+Fix:
+struct X{
+X (int i, int j) : base(i), rem(i % j) { }; 
+int rem, base;
+}

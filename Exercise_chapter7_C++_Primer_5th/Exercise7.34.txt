@@ -1,0 +1,1 @@
+If we put typedef pos at the last line we will get an error every time we used pos befor it was declared , even in a class.  

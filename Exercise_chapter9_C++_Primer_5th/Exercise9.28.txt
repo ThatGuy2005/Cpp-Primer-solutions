@@ -1,0 +1,36 @@
+#include <iostream>
+#include <forward_list>
+#include <string>
+
+using std::string; using std::forward_list;
+
+forward_list<string>& insert_in_forward_list(forward_list<string>& f_list, string s1, string s2)
+{
+	forward_list<string>::iterator begin = f_list.begin();
+	while (begin != f_list.end())
+	{
+		if (*begin == s1)
+		{
+			begin = f_list.insert_after(begin, s2);
+			break;
+		}
+		else
+		{
+			begin++;
+		}
+	}
+	f_list.insert_after(begin, s2);
+	return f_list;
+}
+
+int main()
+{
+	forward_list<string> f_list = { "My ","is : ","name " };
+	string s1 = "is : ";
+	string s2 = "Csongi";
+	insert_in_forward_list(f_list, s1, s2);
+	for (auto s : f_list)
+	{
+		std::cout << s ;
+	}
+}

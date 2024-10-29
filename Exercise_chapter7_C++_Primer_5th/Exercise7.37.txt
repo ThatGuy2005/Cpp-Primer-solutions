@@ -1,0 +1,6 @@
+Sales_data first_iteam(cin) // initialized by Sales_data(std::istream& is){return (is,*this)};
+
+int main()
+{
+Sales_data next; // initialized by Sales_data(std::string s, int u, double r) : bookNo(s), units_sold(u), revenue(r){ }; values: empty string , 0, 0.0;
+Sales_data last ("9-999-99999-9"); // // initialized by Sales_data(std::string s, int u, double r) : bookNo(s), units_sold(u), revenue(r){ }; values: ("9-999-99999-9"), 0, 0.0;

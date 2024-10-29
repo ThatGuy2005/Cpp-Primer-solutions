@@ -1,0 +1,42 @@
+#include <iostream>
+#include <string>
+
+typedef std::string Type;
+Type initVal();
+class Exercise
+{
+public:
+	typedef double Type;
+	Type setVal(Type);
+	Type initVal();
+private:
+	int val;
+};
+Type Exercise::setVal(Type parm) {
+	Exercise::val = parm + initVal();
+	return val;//Error: to conversion from int to string
+}
+
+
+The only problem is that , when we define satVal then we use Type witch will corespond to the globally declared Type witch is a string.So we haveto write Exercise::Type to
+specify that we want that Type witch is declared int the class.
+
+
+#include <iostream>
+#include <string>
+
+typedef std::string Type;
+Type initVal();
+class Exercise
+{
+public:
+	typedef double Type;
+	Type setVal(Type);
+	Type initVal();
+private:
+	int val;
+};
+Exercise::Type Exercise::setVal(Type parm) {
+	Exercise::val = parm + initVal();
+	return val;
+}

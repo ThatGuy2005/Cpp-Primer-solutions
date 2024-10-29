@@ -1,0 +1,3 @@
+if(read(read(cin, data1),data2))
+It will be evaluated as true is the nested read will be true and the outer read will be true, if the nested read fails then the condition fails and returns false.
+It will complete the nested read first and if it fails then the condition fails.

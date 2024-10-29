@@ -1,0 +1,17 @@
+#include <iostream>
+#include <string>
+
+struct Sales_data
+{
+	Sales_data(std::string s = " ") : bookNo(s){};
+	Sales_data(std::istream&is = std::cin) { read(is, *this); }; this is ambigouse, we have 2 default constructors
+	Sales_data read(std::istream& is, Sales_data& rhs); 
+	std::string bookNo;
+	int units_sold = 0;
+	double revenue = 0.0;
+}; 
+Sales_data Sales_data::read(std::istream& is, Sales_data& rhs)
+{
+	is >> rhs.bookNo >> rhs.revenue >> rhs.units_sold ;
+	return is;
+}
