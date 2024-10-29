@@ -1,0 +1,5 @@
+void manip (int , int);
+double dobj;
+
+a) manip('a','z') promotes to int (promotion type)
+b) manip(55.4,dobj) promotion type
